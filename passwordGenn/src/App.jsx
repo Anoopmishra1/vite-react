@@ -37,7 +37,7 @@ const passwordRef = useRef(null)
 
   return (
     <>
-    <div className='w-full max-w-md mx-auto shadow-md rounded-lg px-4 py-3 my-8 text-orange-500 bg-gray-500'>
+  <div className='w-full max-w-md mx-auto shadow-md rounded-lg px-4 py-3 my-8 text-orange-500 bg-gray-500 over'>
       <h1 className='text-white text-center my-4'>Password Generator</h1>
       <div className='flex shadow rounded-lg overflow-hidden mb-4'>
         <input type="text"
@@ -54,40 +54,47 @@ const passwordRef = useRef(null)
         >copy</button>
 
       </div>
-      <dir className="flex text-sm gap-x-2">
+      <div className="flex text-sm gap-1">
         <div className='flex items-center gap-x-1'>
           <input 
           type="range" 
-          min={6}
-          max={100}
-          value={length}
+            min={6}
+            max={100}
+            value={length}
           className='cursor-pointer'
           onChange={(e) => {detLength(e.target.value)}}
           />
           
           <label>Length:{length}</label>
-
         </div>
 
         <input 
-        type="checkbox" 
-        defaultChecked={numberAllowed}
-        id='numberInput'
-        onChange={()=> {setNumberAllowed((prev)  => !prev)}}
-        />
+            type="checkbox" 
+            defaultChecked={numberAllowed}
+            id='numberInput'
+            onChange={()=> {setNumberAllowed((prev)  => !prev)}}
+          />
 
-        <label htmlFor="numberInput">Number</label>
+          <label htmlFor="numberInput">Number</label>
       
 
-        <input 
-        type="checkbox" 
-        defaultChecked={charAllowed}
-        id='characterInput'
-        onChange={()=> {setcharAllowed((prev)  => !prev)}}
-        />
+          <input 
+            type="checkbox" 
+             defaultChecked={charAllowed}
+            id='characterInput'
+            onChange={()=> {setcharAllowed((prev)  => !prev)}}
+          />
 
-        <label htmlFor="characterInput">character</label>
-      </dir>
+          <label htmlFor="characterInput">character</label>
+
+
+
+        
+
+
+
+
+      </div>
 
 
     </div>
